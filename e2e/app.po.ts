@@ -5,7 +5,19 @@ export class HttpPage {
     return browser.get('/');
   }
 
-  getParagraphText() {
-    return element(by.css('app-root h1')).getText();
+  pushButton(text) {
+    return element(by.buttonText(text)).click();
+  }
+
+  getResultsText(exampleElemName) {
+    return element(by.css(`${exampleElemName} pre`)).getText();
+  }
+
+  search(text) {
+    return element(by.css(`app-you-tube-search input`)).sendKeys(text);
+  }
+
+  getSearchText() {
+    return element(by.css(`app-you-tube-search`)).getText();
   }
 }
